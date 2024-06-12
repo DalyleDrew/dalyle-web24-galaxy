@@ -6,15 +6,17 @@ import mdx from "@astrojs/mdx";
 import AutoImport from "astro-auto-import";
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
-import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
-  adapter: netlify({
-    imageCDN: false,
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
   }),
-  site: "https://galaxy.cosmicthemes.com",
+  site: "https://www.dalyle.ca",
   redirects: {
     "/admin": "/keystatic",
   },

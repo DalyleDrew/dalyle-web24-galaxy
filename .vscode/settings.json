@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "content",
         "theme",
-        "DevEx"
+        "DevEx",
+        "vercel"
     ]
 }
