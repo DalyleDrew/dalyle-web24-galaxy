@@ -18,8 +18,8 @@ const navConfig: navItem[] = [
   //   link: "/blog/",
   // },
   {
-    text: "Overview",
-    link: "/overview/",
+    text: "Home",
+    link: "/",
   },
   {
     text: "Contact",

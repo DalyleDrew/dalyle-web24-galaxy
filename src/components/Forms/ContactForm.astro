@@ -19,7 +19,11 @@ import Button from "@components/Button/Button.astro";
     <div class="rounded-xl bg-base-100 px-4 py-10 dark:bg-base-800">
       <h1 class="h2">Contact Us</h1>
       <p class="description mt-6">
-        Let us help you find the right plan for your business.
+        Contact us and we will do our best to help!
+        <br />
+        Urgent Request? Please call <a href="tel:14032952848"
+          >+1 (403) 295-2848</a
+        >.
       </p>
 
       <p class="description mt-2 text-sm">
@@ -38,29 +42,37 @@ import Button from "@components/Button/Button.astro";
             <div>
               <label
                 for="contact__fname"
-                class="text-sm opacity-90 dark:opacity-80">First Name</label
+                class="text-sm opacity-90 dark:opacity-80"
               >
+                Your Name
+                <span class="text-primary-600 dark:text-primary-400">*</span>
+              </label>
               <input
                 type="text"
                 class="form__input mt-0.5"
-                name="contact__fname"
-                id="contact__fname"
-                placeholder="Your first name"
+                name="contact__name"
+                id="contact__name"
+                placeholder="Your name"
                 autofocus
               />
             </div>
 
             <div>
               <label
-                for="contact__lname"
-                class="text-sm opacity-90 dark:opacity-80">Last Name</label
+                for="contact__email"
+                class="text-sm opacity-90 dark:opacity-80"
               >
+                Email
+                <span class="text-primary-600 dark:text-primary-400">*</span>
+              </label>
               <input
-                type="text"
+                type="email"
                 class="form__input mt-0.5"
-                name="contact__lname"
-                id="contact__lname"
-                placeholder="Your last name"
+                name="contact__email"
+                id="contact__email"
+                inputmode="email"
+                placeholder="Your email"
+                required
               />
             </div>
           </div>
@@ -75,23 +87,10 @@ import Button from "@components/Button/Button.astro";
             class="form__input mt-0.5"
             name="contact__company"
             id="contact__company"
-            placeholder="Your company or organization name"
+            placeholder="Your company or organization name (optional)"
           />
         </div>
-        <div>
-          <label for="contact__email" class="text-sm opacity-90 dark:opacity-80"
-            >Email <span class="text-primary-600 dark:text-primary-400">*</span>
-          </label>
-          <input
-            type="email"
-            class="form__input mt-0.5"
-            name="contact__email"
-            id="contact__email"
-            inputmode="email"
-            placeholder="Your preferred contact email"
-            required
-          />
-        </div>
+        <div></div>
         <div>
           <label
             for="contact__message"

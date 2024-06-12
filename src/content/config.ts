@@ -48,8 +48,20 @@ const pagesCollection = defineCollection({
     }),
 });
 
+// pieces
+const piecesCollection = defineCollection({
+  type: "content",
+  schema: () =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      draft: z.boolean().optional(),
+    }),
+});
+
 export const collections = {
   blog: blogCollection,
   authors: authorsCollection,
   otherPages: pagesCollection,
+  pieces: piecesCollection,
 };

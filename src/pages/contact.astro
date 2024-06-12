@@ -4,15 +4,39 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 // components
 import ContactForm from "@components/Forms/ContactForm.astro";
+
+// content
+import * as contactContent from '../content/pieces/contact-content.mdx';
+
 ---
 
 <BaseLayout
   title="Contact Us"
-  description="Contact us and we will help you find the right plan or answer any questions."
+  description="Contact us and we will do our best to help!"
 >
   <div class="mt-24 md:mt-36">
     <div class="container flex justify-center">
-      <ContactForm />
+      <!-- <ContactForm /> -->
+      <!-- {contactContent.Content.toString()} -->
+      <!-- {contactContent.file.toString()} -->
+      <!-- <contactContent /> -->
+      <!-- Content from `Cta2.astro` -->
+      <div class="md:col-span-2">
+          <div class="flex justify-start">
+            <p class="colored-title inline">Need Help?</p>
+          </div>
+          <h2 class="h1 mt-8">Call Us Anytime</h2>
+          <p class="description mt-6">
+            Get help through our 24/7 hotline.
+            <br>
+            <a href="tel:14032952848">+1 (403) 295-2848</a>
+          </p>
+        </div>
+        <!-- <div class="flex items-end justify-start md:justify-end">
+          <Button variant="primary" href="tel:14032952848" class="mx-12">Call&nbsp;Now</Button>
+          <Button variant="secondary" href="/contact/">Contact&nbsp;Form</Button>
+        </div> -->
+      </div>
     </div>
   </div>
 </BaseLayout>
