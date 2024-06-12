@@ -28,7 +28,7 @@ export default config({
   // create a Keystatic Cloud account here: https://keystatic.cloud/
   cloud: { project: "dalyle/dalyle24" },
   ui: {
-    brand: { name: "Dalyle.ca" },
+    brand: { name: "Dalyle DevOps Inc." },
   },
   collections: {
     /**
