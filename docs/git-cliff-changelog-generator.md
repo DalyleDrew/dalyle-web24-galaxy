@@ -1,5 +1,8 @@
 # `git-cliff` Usage
 
+
+
+
 ## Examples
 
 ### Initial Version
@@ -31,4 +34,20 @@ git cliff --tag 1.1.2
 
 ```shell
 git cliff --bump -o CHANGELOG.md
+```
+
+#### Commit
+[git - What would be a good commit message for updating package versions using Conventional Commits? - Stack Overflow](https://stackoverflow.com/questions/65855111/what-would-be-a-good-commit-message-for-updating-package-versions-using-conventi)
+
+```shell
+git add CHANGELOG.md
+git commit -m "docs: 🔊 bump to v1.2.0"
+```
+
+
+### Misc. Commands
+
+
+```shell
+git tag -a v1.2.0 -m "Release v1.2.0"
 ```

@@ -12,5 +12,6 @@
         "astro-build.astro-vscode",
         "vsls-contrib.codetour",
         "tamasfe.even-better-toml",
+        "robole.marky-dynamic",
     ]
 }
