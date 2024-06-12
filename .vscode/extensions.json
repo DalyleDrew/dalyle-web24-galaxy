@@ -1,0 +1,15 @@
+{
+    // Recommendations mainly from Galaxy Themes Developer excellent blog post:
+    // https://webreaper.dev/posts/best-vscode-extensions-front-end-developers/
+    "recommendations": [
+        "formulahendry.auto-rename-tag",
+        "eamodio.gitlens",
+        "naumovs.color-highlight",
+        "aaron-bond.better-comments",
+        "pkief.material-icon-theme",
+        "dracula-theme.theme-dracula",
+        "yoavbls.pretty-ts-errors",
+        "astro-build.astro-vscode",
+        "vsls-contrib.codetour"
+    ]
+}
