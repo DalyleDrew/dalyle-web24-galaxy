@@ -1,0 +1,76 @@
+/* Markdown and MDX Styling for blog posts, using @tailwind/typography with `prose` */
+.prose {
+  /* dark theme */
+  @apply prose-base dark:prose-invert;
+  /* emergency word break */
+  @apply break-words;
+  /* heading font sizes */
+  @apply prose-h1:text-3xl md:prose-h1:text-4xl;
+  @apply prose-h2:text-2xl md:prose-h2:text-3xl;
+  @apply prose-h3:text-xl md:prose-h3:text-2xl;
+  @apply prose-h4:text-lg md:prose-h4:text-xl;
+  /* all headings */
+  @apply prose-headings:mb-5 prose-headings:mt-7 prose-headings:font-medium;
+  /* paragraphs */
+  @apply prose-p:my-2;
+  /* code */
+  @apply prose-code:rounded-md prose-code:border-2 prose-code:border-solid prose-code:border-base-200 prose-code:bg-base-200/50 prose-code:px-[.1rem] prose-code:font-normal prose-code:text-inherit dark:prose-code:border-base-800 dark:prose-code:bg-base-800 sm:prose-code:text-base;
+  /* code remove backticks */
+  code::before {
+    content: "";
+  }
+  code::after {
+    content: "";
+  }
+  /* anchor links */
+  @apply prose-a:text-primary-600 prose-a:underline prose-a:transition hover:prose-a:text-primary-800 dark:prose-a:text-primary-300 dark:hover:prose-a:text-primary-400;
+  /* images */
+  @apply prose-img:mx-auto prose-img:h-auto prose-img:w-full prose-img:max-w-[800px] prose-img:rounded-sm;
+  /* video */
+  @apply prose-video:mr-auto prose-video:min-w-0 prose-video:max-w-full;
+  /* blockquote */
+  @apply prose-blockquote:border-l-primary-600 dark:prose-blockquote:border-l-primary-500;
+  /* horizontal rule */
+  @apply prose-hr:my-8 prose-hr:border-base-600/50;
+  /* table head */
+  @apply prose-thead:border-b-base-600;
+  /* table row */
+  @apply prose-tr:border-b-base-600/50;
+}
+
+/* Markdown Styling for admonitions in posts, using @tailwind/typography with `prose` 
+   These are meant to override any of the normal prose stylings above */
+.admonition {
+  /* headings */
+  @apply mt-0 prose-headings:mb-0;
+  /* paragraphs */
+  @apply prose-p:mb-0 prose-p:mt-0;
+  /* code */
+  @apply prose-code:rounded-md prose-code:border-opacity-0 prose-code:px-[.1rem] prose-code:font-normal prose-code:text-inherit sm:prose-code:text-base;
+  /* anchor links */
+  @apply prose-a:text-inherit prose-a:underline prose-a:transition hover:prose-a:text-inherit hover:prose-a:opacity-80;
+}
+
+.prose h1:first-child,
+.prose h2:first-child,
+.prose h3:first-child,
+.prose h4:first-child,
+.prose h5:first-child,
+.prose h6:first-child,
+.prose p:first-child,
+.prose a:first-child,
+.prose code:first-child,
+.prose blockquote:first-child,
+.prose .astro-code:first-child {
+  @apply mt-0;
+}
+
+.prose .astro-code code {
+  @apply border-none bg-inherit;
+}
+
+/* youtube embed */
+.prose iframe {
+  @apply mr-auto min-w-0 max-w-full;
+}
+/* end blog post markdown styling */

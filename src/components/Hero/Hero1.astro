@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
+
+// components
+import Button from "@components/Button/Button.astro";
+---
+
+<section
+  id="hero1"
+  class="relative flex w-full overflow-hidden pb-28 pt-32 md:pb-36 md:pt-40"
+>
+  <!-- background glow -->
+  <div
+    class="absolute inset-0 bottom-1/2 -z-10 mx-auto aspect-square w-[65%] max-w-5xl -translate-y-2/3 rounded-full bg-primary-500/50 blur-[100px]"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- background grid svg -->
+  <div class="absolute inset-0 -z-20 flex overflow-hidden">
+    <Icon
+      name="grid-lg"
+      class="relative h-full w-full object-cover text-base-400/70 opacity-10 dark:text-base-500"
+      aria-hidden="true"
+    />
+  </div>
+
+  <!-- hero items -->
+  <div class="container mx-auto max-w-4xl gap-8 text-center">
+    <!-- notification -->
+<!--
+    <div
+      class="mb-4 flex w-full items-center justify-center"
+      data-aos="fade-up"
+      data-aos-trigger="#hero1"
+    >
+      <a
+        href="/blog/tsconfig-paths-setup/"
+        class="flex items-center rounded-full border border-primary-300 bg-base-100 px-4 py-1 text-sm text-base-800 ring-2 ring-primary-500 ring-opacity-20 transition hover:border-primary-400 dark:border-primary-300/20 dark:bg-base-800 dark:text-base-200 dark:hover:border-primary-400/60"
+      >
+        <span class="flex items-center gap-2">
+          <Icon
+            name="tabler:wand"
+            class="inline h-4 w-4 text-primary-600 dark:text-primary-300"
+            aria-hidden="true"
+          />New updates!</span
+        ></a
+      >
+    </div> -->
+
+
+    <!-- Hero text -->
+    <h1
+      class="bg-gradient-to-r from-base-900 to-base-600/90 bg-clip-text pb-4 text-5xl font-medium text-transparent dark:from-base-100 dark:to-base-400/90 md:text-6xl"
+      data-aos="fade-up"
+      data-aos-trigger="#hero1"
+    >
+      Welcome to Dalyle
+    </h1>
+    <h2>
+      <em>(da-lie-ill)</em>
+    </h2>
+    <p
+      class="description mx-auto mt-2 max-w-sm sm:max-w-md md:max-w-lg"
+      data-aos="fade-up"
+      data-aos-delay="0.2"
+      data-aos-trigger="#hero1"
+    >
+      <a href="/">Dalyle DevOps Inc.</a> is an attempt at a solution to the general state of Calgary Web Dev, App Dev, Design, Maintenance, SEO, etc.
+    </p>
+
+    <!-- CTA -->
+    <div
+      class="mx-auto mt-8 flex max-w-sm flex-col justify-center gap-4 px-4 sm:flex-row"
+    >
+      <Button
+        variant="primary"
+        href="https://cosmicthemes.com/themes/galaxy/"
+        data-aos="fade-up"
+        data-aos-delay="0.8"
+        data-aos-trigger="#hero1"
+      >
+        Contact Us
+      </Button>
+      <Button
+        variant="outline"
+        href="/overview/"
+        arrow="right"
+        data-aos="fade-up"
+        data-aos-delay="1"
+        data-aos-trigger="#hero1"
+      >
+        About
+      </Button>
+    </div>
+  </div>
+</section>

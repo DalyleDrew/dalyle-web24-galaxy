@@ -1,0 +1,60 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+// utils
+import { formatDate } from "@js/textUtils";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  showDescription?: boolean;
+  class?: string;
+  rest?: any; // catch-all for any additional parameters, such as "aria-label"
+}
+
+const {
+  post,
+  showDescription = false,
+  class: className,
+  ...rest
+} = Astro.props as Props;
+const { title, description, pubDate, authors, heroImage } = post.data;
+---
+
+<a
+  href={`/blog/${post.slug}/`}
+  class=`flex group flex-col ${className}`
+  {...rest}
+>
+  <div
+    class="shrink-0 justify-center overflow-hidden rounded-md border border-base-300 sm:justify-normal dark:border-base-600/60"
+  >
+    <figure>
+      <Image
+        src={heroImage}
+        alt={`${title} blog post`}
+        height={700}
+        quality="high"
+        class="h-auto max-h-96 w-full object-cover transition-all duration-500 group-hover:scale-[1.02]"
+      />
+    </figure>
+  </div>
+  <div class="w-full">
+    <!-- title -->
+    <h2 class="mt-1 text-lg font-medium md:text-xl">
+      {title}
+    </h2>
+
+    <!-- description -->
+    {
+      showDescription && (
+        <p class="description mt-1 text-sm lg:text-base">{description}</p>
+      )
+    }
+
+    <!-- published date -->
+    <p class="mt-1 whitespace-nowrap text-sm opacity-70">
+      {formatDate(pubDate)}
+    </p>
+  </div>
+</a>

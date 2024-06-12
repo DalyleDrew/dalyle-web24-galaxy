@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "changing components on pages",
+  "steps": [
+    {
+      "file": "src/pages/index.astro",
+      "description": "Lets say we want to change the hero section on the homepage (src/pages/index.astro file). There are already 3 components available under src/components/hero. So for example, you can change this \"@components/Hero/Hero1.astro\" to \"@components/Hero/Hero2.astro\" and your Hero section will now be a different already crafted option.",
+      "line": 12
+    },
+    {
+      "file": "src/components/Hero/Hero3.astro",
+      "description": "You can also go into a component itself, here \"Hero3.astro\", and edit anything you want. For instance, on this line you could change the image you are using to another one you have downloaded. You will also want to edit the text in each component.\r\n\r\nYou can of course edit any styling to your liking too.",
+      "line": 8
+    },
+    {
+      "file": "src/components/Pricing/Pricing1.astro",
+      "description": "For most components, I define typescript types for what the data should look like. This allows you to edit an object at the top of the file, and the contents will update accordingly.",
+      "line": 21
+    },
+    {
+      "file": "src/components/Pricing/Pricing1.astro",
+      "description": "This is an example pricing element of the same type you just saw. Do you like this method of editing the components, or would you rather I not do this and just let you edit the code and text below manually (which you can of course still do)? Let me know at creator@cosmicthemes.com, or on X (twitter) at @BowTiedWebReapr!\r\n\r\nHappy coding!",
+      "line": 39
+    }
+  ]
+}

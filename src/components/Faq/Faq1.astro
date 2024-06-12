@@ -1,0 +1,25 @@
+---
+/**
+ * * FAQ section in accordions
+ */
+
+// components
+import Accordion from "@components/Accordion/Accordion.astro";
+
+// data
+import faqData from "@config/faqData.json";
+---
+
+<section id="faq1" class="container my-24 md:my-36">
+  <div class="flex justify-center">
+    <p class="colored-title inline">FAQ</p>
+  </div>
+  <h2 class="h2 mt-8 text-center">Answers to all your questions</h2>
+  <div class="mx-auto mt-10 flex max-w-3xl flex-col gap-3">
+    {
+      faqData.map((faqItem) => (
+        <Accordion title={faqItem.question} details={faqItem.answer} />
+      ))
+    }
+  </div>
+</section>

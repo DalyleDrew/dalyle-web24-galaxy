@@ -1,0 +1,15 @@
+---
+// main layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// components
+import SignupForm from "@components/Forms/SignupForm.astro";
+---
+
+<BaseLayout title="Sign Up" description="Sign Up for this awesome software">
+  <div class="mt-24 md:mt-36">
+    <div class="container flex justify-center">
+      <SignupForm />
+    </div>
+  </div>
+</BaseLayout>

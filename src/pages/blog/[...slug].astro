@@ -1,0 +1,29 @@
+---
+import { type InferGetStaticPropsType } from "astro";
+
+// layout
+import BlogLayout from "@layouts/BlogLayoutCentered.astro";
+
+// components
+import ExternalLink from "@components/MarkdownComponents/ExternalLink.astro";
+
+// utils
+import { getAllPosts } from "@js/blogUtils";
+
+export async function getStaticPaths() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const post = Astro.props as Props;
+const { Content } = await post.render();
+---
+
+<BlogLayout post={post}>
+  <Content components={{ a: ExternalLink }} />
+</BlogLayout>

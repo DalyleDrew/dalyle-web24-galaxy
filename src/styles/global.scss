@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// $aos-distance: 20px; // This adjusts the AOS distance for built-in animations. Default is 100px. https://github.com/michalsnik/aos#adding-custom-easing
+// @import "node_modules/aos/src/sass/aos.scss";
+
+/* https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
+@layer base {
+  :root {
+    // custom shiki styling for markdown code blocks
+    // Shiki Themes: https://github.com/shikijs/shiki/blob/main/docs/themes.md
+    --astro-code-color-text: #ffffff;
+    --astro-code-color-background: #202022;
+    --astro-code-token-constant: #a5b4fc; // recommend making this a slightly off color from your primary-300 color
+    --astro-code-token-string: #624fb0; // I don't see this ever used, but it's here if you need it
+    --astro-code-token-comment: #a1a1aad0;
+    --astro-code-token-keyword: #d4d4d8d0;
+    --astro-code-token-parameter: #47a7eb; // I don't see this ever used, but it's here if you need it
+    --astro-code-token-function: #ffffff;
+    --astro-code-token-string-expression: #c4b5fd; // recommend making this your primary-300 color
+    --astro-code-token-punctuation: #d4d4d8d0;
+    --astro-code-token-link: #ffffff;
+  }
+
+  html {
+    @apply text-base leading-[1.6rem];
+    scroll-behavior: smooth;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-1 w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-inherit;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-base-400 bg-opacity-90 dark:bg-base-600;
+  }
+}
+
+/*  things in the components layer can be overriden with utility classes. 
+    Useful for custom styles on third-party components, and things like 
+    btn, card, badge, etc  */
+@layer components {
+  @import "buttons";
+  @import "prose";
+
+  .h1 {
+    @apply text-3xl font-medium md:text-4xl;
+  }
+
+  .h2 {
+    @apply text-3xl font-medium;
+  }
+
+  .h3 {
+    @apply text-xl font-medium;
+  }
+
+  .colored-title {
+    @apply main-text-gradient text-lg;
+  }
+
+  .description {
+    @apply text-base-700 dark:text-base-300 md:text-lg;
+  }
+
+  .container {
+    @apply mx-auto max-w-[1100px] px-4;
+  }
+
+  /* used for newsletter, and contact form inputs */
+  .form__input {
+    @apply w-full rounded-md border border-base-300 bg-base-100 px-3 transition hover:border-primary-500 dark:border-base-600/60 dark:bg-base-800;
+    @apply focus:border-primary-500 focus-visible:ring-2 focus-visible:ring-primary-500;
+
+    &::placeholder {
+      @apply text-base-400;
+    }
+  }
+}
+
+@layer utilities {
+  @import "aos";
+
+  /* focus utility class (for when user is tabbing through items on page) */
+  .primary-focus {
+    @apply focus:outline-none focus-visible:rounded-sm focus-visible:outline-primary-500;
+  }
+
+  /* main gradient. Used for tags and some headings */
+  .main-text-gradient {
+    @apply bg-gradient-to-r from-primary-800 to-primary-600 bg-clip-text text-transparent dark:from-primary-400 dark:to-primary-200;
+  }
+
+  /* use with "animate-pause" to pause a CSS animation */
+  .pause {
+    animation-play-state: paused !important;
+  }
+}

@@ -1,0 +1,43 @@
+---
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// components
+import PostCard from "@components/PostCard/PostCard.astro";
+import PostCardLarge from "@components/PostCard/PostCardLarge.astro";
+
+// utils
+import { getAllPosts } from "@js/blogUtils";
+
+const posts = await getAllPosts();
+---
+
+<BaseLayout
+  title="Our Blog Posts"
+  description="Learn from our blog posts about web development, design, and more."
+>
+  <div class="container mt-24 md:mt-36">
+    <div class="flex">
+      <p class="colored-title">Our blog</p>
+    </div>
+    <h1 class="h2 mt-6">Blog posts to help you on your journey</h1>
+    <div class="mt-10 grid gap-4 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
+      <!-- map posts and make the first one span 3 columns, but the rest only span 1 column -->
+      {
+        posts.map((post) => {
+          if (post === posts[0]) {
+            return (
+              <PostCardLarge
+                post={post}
+                showDescription={true}
+                class="md:col-span-2 lg:col-span-3"
+              />
+            );
+          } else {
+            return <PostCard post={post} showDescription={false} />;
+          }
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>

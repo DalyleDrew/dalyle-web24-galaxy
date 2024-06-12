@@ -1,0 +1,12 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Light and Dark theme",
+  "steps": [
+    {
+      "file": "src/layouts/BaseLayout.astro",
+      "description": "There is both a light and dark theme to this template. By default, it is dark. If you would like to see the light version just remove the class `dark` in this `BaseLayout.astro` file. The entire website will then use the light theme!",
+      "line": 36
+    }
+  ],
+  "ref": "main"
+}

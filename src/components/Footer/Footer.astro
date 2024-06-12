@@ -1,0 +1,95 @@
+---
+// components
+import FooterLink from "@components/Footer/FooterLink.astro";
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import Button from "@components/Button/Button.astro";
+
+// data
+import siteData from "@config/siteData.json";
+
+const today = new Date();
+---
+
+<div class="mt-20 border-t border-t-base-300 dark:border-t-base-600/60">
+  <footer class="container m-auto w-full pb-6">
+    <div
+      class="flex w-full flex-col justify-between gap-4 sm:flex-row sm:gap-10"
+    >
+      <div class="mt-6 flex flex-col items-start gap-2">
+        <SiteLogo />
+<!--
+        <p>Sign up for our newsletter</p>
+        <form
+          id="newsletter-form"
+          name="newsletter-form"
+          class="mr-auto mt-1 flex max-w-lg gap-3"
+        >
+          <label
+            for="newsletter-email"
+            class="description mb-1 hidden text-base-100">*Email</label
+          >
+          <input
+            type="email"
+            class="form__input"
+            name="newsletter-email"
+            id="newsletter-email"
+            inputmode="email"
+            placeholder="Email"
+            required
+          />
+
+          <Button variant="primary" type="submit">Subscribe</Button>
+        </form> -->
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+        <!-- Navigation -->
+        <div class="flex flex-col">
+          <!-- <h3 class="mb-2 mt-6 text-lg font-semibold">Navigation</h3>
+          <FooterLink href="/blog/">Blog</FooterLink>
+          <FooterLink href="/overview/">Overview</FooterLink>
+          <FooterLink href="/about/">About</FooterLink>
+          <FooterLink href="/contact/">Contact</FooterLink> -->
+        </div>
+
+        <!-- Legal -->
+        <div class="flex flex-col">
+          <h3 class="mb-2 mt-6 text-lg font-semibold">Legal</h3>
+          <FooterLink href="/reconciliation/" newTab={true}>
+            Statement of Reconciliation
+          </FooterLink>
+          <!-- <FooterLink href="https://cosmicthemes.com/license/" newTab={true}>
+            GDPR
+          </FooterLink>
+          <FooterLink href="https://cosmicthemes.com/support/" newTab={true}>
+            Cookie Policy
+          </FooterLink> -->
+        </div>
+
+        <!-- In the Know -->
+        <div class="flex flex-col">
+          <h3 class="mb-2 mt-6 text-lg font-semibold">Family</h3>
+          <FooterLink href="https://www.stevens.pro/?utm_source=dalyle.ca" newTab={true}>
+            www.stevens.pro
+          </FooterLink>
+          <FooterLink href="https://github.com/GregSweeats" newTab={true}>
+            @GregSweats
+          </FooterLink>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-base-300 dark:border-base-600/60" />
+    <div class="text-center text-sm text-base-100/60 italic mx-12">
+      🍁
+      We honour the spirit, life, and lessons this land and its ancestors teach us.
+      We acknowledge the traditional land and territories of the Siksika, Piikani, Kainai, Tsuut’ina, and Îyârhe Nakoda as well as the Foothills District and the Rocky View District within the Battle River Territory of the Otipemisiwak Métis Government of Alberta.
+    </div>
+    <hr class="my-6 border-base-300 dark:border-base-600/60" />
+    <div class="text-sm text-base-100/60">
+      &copy; {today.getFullYear()}
+      {" "}{siteData.name}
+      <!-- siteData.name = "Dalyle DevOps Inc." with trailing period, double looks weird. -->
+      All rights reserved.
+    </div>
+  </footer>
+</div>

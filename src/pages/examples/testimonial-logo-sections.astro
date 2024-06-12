@@ -1,0 +1,35 @@
+---
+// style import
+import "@/styles/global.scss";
+
+// layout
+import BaseLayout from "@layouts/BaseLayout.astro";
+
+// components
+import Hero from "@components/Hero/Hero3.astro";
+import LogoCloud1 from "@components/LogoCloud/LogoCloud1.astro";
+import LogoCloud2 from "@components/LogoCloud/LogoCloud2.astro";
+import Feature1 from "@components/Feature/Feature1.astro";
+import Feature2 from "@components/Feature/Feature2.astro";
+import Feature3 from "@components/Feature/Feature3.astro";
+import Feature4 from "@components/Feature/Feature4.astro";
+import Feature5 from "@components/Feature/Feature5.astro";
+import Testimonials1 from "@components/Testimonials/Testimonials1.astro";
+import Testimonials2 from "@components/Testimonials/Testimonials2.astro";
+import Pricing from "@components/Pricing/Pricing1.astro";
+import Faq1 from "@components/Faq/Faq1.astro";
+import Faq2 from "@components/Faq/Faq2.astro";
+---
+
+<BaseLayout
+  title="testimonial and logo sections"
+  description="All Testimonial and Logo sections you get with the Galaxy theme by Cosmic Themes."
+>
+  <div class="container my-28 flex justify-center">
+    <h1 class="h1">All Testimonial and Logo Cloud Sections</h1>
+  </div>
+  <LogoCloud2 />
+  <Testimonials1 />
+  <LogoCloud1 />
+  <Testimonials2 />
+</BaseLayout>

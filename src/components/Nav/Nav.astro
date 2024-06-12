@@ -1,0 +1,248 @@
+---
+import { Icon } from "astro-icon";
+
+// components
+import NavLink from "@components/Nav/NavLink.astro";
+import NavDropdownToggle from "@components/Nav/NavDropdown/NavDropdownToggle.astro";
+import MobileNavDropdown from "@components/Nav/NavDropdown/MobileNavDropdown.astro";
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import Button from "@components/Button/Button.astro";
+import ThemeToggle from "@components/ThemeToggle/ThemeToggle.astro";
+
+// data
+import navData from "@config/navData.json";
+// console.log(JSON.stringify(navData, null, 2));
+---
+
+<section
+  id="nav"
+  class="navbar--initial fixed left-0 top-0 z-30 flex w-full border-b border-b-transparent bg-transparent transition-all duration-300"
+  transition:name={`nav`}
+>
+  <div class="mx-auto w-full max-w-6xl">
+    <header
+      class="container flex h-full w-full flex-col md:flex-row md:items-center md:justify-between"
+    >
+      <div
+        class="flex flex-row items-center justify-between text-base-900 lg:justify-start dark:text-base-100"
+      >
+        <!-- home button / image -->
+        <div class="flex flex-auto justify-start">
+          <SiteLogo />
+        </div>
+
+        <!-- mobile nav toggle -->
+        <button
+          id="mobile-nav__toggle"
+          aria-label="toggle navigation menu"
+          aria-haspopup="true"
+          aria-expanded="false"
+          class="primary-focus relative inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
+        >
+          <!-- hamburger icon to open menu -->
+          <Icon
+            name="tabler:menu-2"
+            class="absolute inline-block h-8 w-8 transition-all"
+            aria-hidden="true"
+          />
+          <!-- "X" icon to close menu -->
+          <Icon
+            name="tabler:x"
+            class="invisible absolute inline-block h-8 w-8 transition-all"
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+
+      <!-- nav items -->
+      <nav
+        id="nav__content"
+        class="absolute mx-auto hidden h-fit flex-grow flex-col items-center gap-1 text-lg md:static md:flex md:flex-row md:justify-end md:text-base"
+      >
+        <ul
+          class="flex h-fit w-full flex-col items-center gap-1 md:w-fit md:flex-row md:gap-0"
+        >
+          {
+            // if dropdown exists, setup the dropdown, otherwise it is just a link
+            navData.map((navItem) =>
+              "dropdown" in navItem ? (
+                // dropdowns
+                <li class="w-full">
+                  <NavDropdownToggle navItem={navItem} />
+                  <MobileNavDropdown navItem={navItem} />
+                </li>
+              ) : (
+                // normal nav link
+                <NavLink {navItem} />
+              ),
+            )
+          }
+        </ul>
+
+        <!-- end buttons -->
+<!--
+        <div
+          class="flex w-full flex-col justify-start gap-2 md:w-fit md:flex-row md:items-center md:gap-1"
+        >
+          <ThemeToggle class="hidden md:block" />
+          <div class="flex">
+            <Button variant="ghost" href="/login/" class="whitespace-nowrap">
+              Sign In
+            </Button>
+          </div>
+          <div
+            class="flex w-full justify-between pl-4 md:block md:w-fit md:pl-0"
+          >
+            <Button variant="primary" href="/signup/">Sign Up</Button>
+            <ThemeToggle class="block md:hidden" />
+          </div>
+        </div> -->
+      </nav>
+    </header>
+  </div>
+</section>
+
+<style lang="scss">
+  .navbar--scrolled {
+    @apply border-b-base-200 bg-base-100/70 backdrop-blur dark:border-b-base-600/60 dark:bg-base-800/30;
+  }
+
+  .navbar--initial {
+    @apply border-b-transparent bg-transparent;
+  }
+
+  .mobile-nav--show {
+    animation: mobileNavFadeInAnimation ease-in-out 0.2s forwards;
+    @apply inset-x-4 top-16 flex items-center gap-1 rounded-md border border-base-400 bg-base-200 p-4 dark:border-base-600/60 dark:bg-base-800;
+    @apply md:static md:gap-0 md:border-none md:bg-transparent md:py-0;
+  }
+
+  @keyframes mobileNavFadeInAnimation {
+    0% {
+      @apply invisible opacity-0;
+    }
+    100% {
+      @apply visible opacity-100;
+    }
+  }
+
+  .mobile-nav__icon--show {
+    animation: spinAnimation ease-in-out 0.3s forwards;
+  }
+
+  // keyframes to make an element spin in 360 when class is added
+  @keyframes spinAnimation {
+    0% {
+      transform: rotate(0deg);
+      @apply visible opacity-0;
+    }
+    100% {
+      transform: rotate(180deg);
+      @apply visible opacity-100;
+    }
+  }
+</style>
+
+<!-- script to handle mobile nav opening and closing -->
+<script>
+  // let mobileNavContainer: HTMLElement | null;
+  let mobileNavToggle: HTMLElement | null;
+  let navContent: HTMLElement | null;
+
+  function toggleMobileNav(event: Event) {
+    if (mobileNavToggle && navContent) {
+      if (
+        mobileNavToggle.hasAttribute("aria-expanded") &&
+        mobileNavToggle.getAttribute("aria-expanded") === "false"
+      ) {
+        // check if mobileNavToggle has the attribute aria-expanded="false"
+        // mobile nav is currently closed, so open it
+        mobileNavToggle.setAttribute("aria-expanded", "true");
+        mobileNavToggle.firstElementChild?.classList.add("invisible");
+        mobileNavToggle.firstElementChild?.classList.remove(
+          "mobile-nav__icon--show",
+        );
+        mobileNavToggle.lastElementChild?.classList.add(
+          "mobile-nav__icon--show",
+        );
+
+        // mobile nav content drawer
+        navContent.classList.remove("hidden");
+        navContent.classList.add("mobile-nav--show");
+      } else {
+        // dropdown is currently open, so close it
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+        mobileNavToggle.lastElementChild?.classList.remove(
+          "mobile-nav__icon--show",
+        );
+        mobileNavToggle.firstElementChild?.classList.add(
+          "mobile-nav__icon--show",
+        );
+
+        // mobile nav content drawer
+        navContent.classList.remove("mobile-nav--show");
+        navContent.classList.add("hidden");
+      }
+      event.preventDefault();
+      return false;
+    }
+  }
+
+  function initMobileNav() {
+    // every time a view transition or page load occurs, we need to init these variables
+    mobileNavToggle = document.getElementById("mobile-nav__toggle");
+    navContent = document.getElementById("nav__content");
+
+    if (mobileNavToggle) {
+      mobileNavToggle.addEventListener("click", toggleMobileNav);
+
+      // if dropdown menu is open and there is a click outside it, close the menu
+      document.addEventListener("click", (event) => {
+        if (
+          mobileNavToggle &&
+          navContent &&
+          mobileNavToggle.getAttribute("aria-expanded") === "true" &&
+          !mobileNavToggle.contains(event.target as Node) &&
+          !navContent.contains(event.target as Node)
+        ) {
+          toggleMobileNav(event);
+        }
+      });
+    }
+  }
+
+  // runs on initial page load
+  initMobileNav();
+
+  // runs on view transitions navigation
+  document.addEventListener("astro:after-swap", initMobileNav);
+</script>
+
+<!-- script on scrolldown to make navbar more legible -->
+<script>
+  let navbar: HTMLElement | null;
+
+  function scrollHandler() {
+    if (navbar) {
+      if (window.scrollY > 50) {
+        // if we have scrolled down the page a bit, add a frosted-glass look to the navbar
+        navbar.classList.add("navbar--scrolled");
+        navbar.classList.remove("navbar--initial");
+      } else {
+        navbar.classList.add("navbar--initial");
+        navbar.classList.remove("navbar--scrolled");
+      }
+    }
+  }
+
+  function initNav() {
+    navbar = document.getElementById("nav");
+    window.addEventListener("scroll", scrollHandler, { passive: true });
+  }
+
+  // runs on initial page load
+  initNav();
+
+  // runs on view transitions navigation. Not needed if item has "transition:persist"
+  document.addEventListener("astro:after-swap", initNav);
+</script>

@@ -1,0 +1,89 @@
+---
+/**
+ * * Logo cloud section marquee
+ *
+ * These are taken from the src/icons folder. You may desire to modify any SVGs you use to have the fill set to "currentColor"
+ * to use the current text color. That is how I have set up these icons for demo purposes
+ *
+ * There is a commented out script at the bottom. If you would like the marquee to pause on mouseover, uncomment it.
+ */
+
+import { Icon } from "astro-icon";
+---
+
+<section
+  id="logocloud2"
+  class="border-y border-base-300 py-6 dark:border-base-600/60"
+>
+  <div class="relative mx-auto max-w-[1800px] overflow-hidden px-4">
+    <!-- left fade-out -->
+    <div
+      class="absolute -left-px top-0 z-10 h-full w-[20%] bg-gradient-to-r from-base-100 from-20% to-transparent dark:from-base-900"
+    >
+    </div>
+    <!-- right fade-out -->
+    <div
+      class="absolute -right-px top-0 z-10 h-full w-[20%] bg-gradient-to-r from-transparent to-base-100 to-80% dark:to-base-900"
+    >
+    </div>
+
+    <div class="logo-marquee relative flex gap-32 overflow-hidden">
+      <!-- Each animate-marquee2 section needs to have the exact same icons. Just do one then copy / paste -->
+      <div
+        class="flex min-w-full shrink-0 animate-marquee2 items-center justify-around gap-32"
+      >
+        <Icon name="astro" class="logo py-2" aria-label="logo" />
+
+        <Icon name="spotify" class="logo" aria-label="logo" />
+
+        <Icon name="framer" class="logo" aria-label="logo" />
+
+        <Icon name="dribbble" class="logo" aria-label="logo" />
+
+        <Icon name="sanity" class="logo py-2" aria-label="logo" />
+
+        <Icon name="contentfull" class="logo" aria-label="logo" />
+
+        <Icon name="github" class="logo" aria-label="logo" />
+
+        <Icon name="notion" class="logo" aria-label="logo" />
+
+        <Icon name="adobe" class="logo" aria-label="logo" />
+
+        <Icon name="zoom" class="logo" aria-label="logo" />
+      </div>
+
+      <!-- Each animate-marquee2 section needs to have the exact same icons. Just do one then copy / paste -->
+      <div
+        aria-hidden="true"
+        class="flex min-w-full shrink-0 animate-marquee2 items-center justify-around gap-32"
+      >
+        <Icon name="astro" class="logo py-2" aria-label="logo" />
+
+        <Icon name="spotify" class="logo" aria-label="logo" />
+
+        <Icon name="framer" class="logo" aria-label="logo" />
+
+        <Icon name="dribbble" class="logo" aria-label="logo" />
+
+        <Icon name="sanity" class="logo py-2" aria-label="logo" />
+
+        <Icon name="contentfull" class="logo" aria-label="logo" />
+
+        <Icon name="github" class="logo" aria-label="logo" />
+
+        <Icon name="notion" class="logo" aria-label="logo" />
+
+        <Icon name="adobe" class="logo" aria-label="logo" />
+
+        <Icon name="zoom" class="logo" aria-label="logo" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .logo {
+    @apply h-10 w-auto;
+  }
+</style>

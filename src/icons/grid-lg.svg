@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- `preserveAspectRatio="xMinYMin slice"` acts like object-fit: cover for images -->
+<!-- strokes all set to `stroke:currentColor;` so color is inherited from the text color -->
+
+<svg
+   viewBox="0 0 1800 1000"
+   version="1.1"
+   id="svg1"
+   preserveAspectRatio="xMinYMin slice"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 100,1000 V 0"
+       id="path3" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 200,0 V 1000"
+       id="path4" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 300,1000 V 0"
+       id="path5" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 400,0 V 1000"
+       id="path6" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 500,1000 V 0"
+       id="path7" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 600,0 V 1000"
+       id="path8" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 700,1000 V 0"
+       id="path9" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 800,0 V 1000"
+       id="path10" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 900,1000 V 0"
+       id="path11" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1000,0 V 1000"
+       id="path12" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1100,1000 V 0"
+       id="path13" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1200,0 V 1000"
+       id="path14" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1300,1000 V 0"
+       id="path15" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1400,0 V 1000"
+       id="path16" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1500,1000 V 0"
+       id="path17" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1600,0 V 1000"
+       id="path18" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-width:2;stroke-dasharray:none;stroke:currentColor;stroke-opacity:1"
+       d="M 1700,1000 V 0"
+       id="path19" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.0087525,899.49125 H 1797.9912"
+       id="path12-3" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1797.9912,799.63661 H 2.0087525"
+       id="path13-4" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.0087525,699.78196 H 1797.9912"
+       id="path14-8" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1797.9912,599.92732 H 2.0087525"
+       id="path15-6" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.0087525,500.07268 H 1797.9912"
+       id="path16-6" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1797.9912,400.21804 H 2.0087525"
+       id="path17-0" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 2.0087525,300.36339 H 1797.9912"
+       id="path18-7" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1797.9912,200.50875 H 2.0087525"
+       id="path19-0" />
+    <path
+       style="fill-opacity:1;fill-rule:evenodd;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 1797.9912,100 H 2.008775"
+       id="path19-0-4" />
+  </g>
+</svg>

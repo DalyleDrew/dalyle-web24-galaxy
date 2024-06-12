@@ -1,0 +1,112 @@
+---
+/**
+ * * pricing section for one price only
+ * For those who like to keep it simple
+ */
+
+import { Icon } from "astro-icon";
+
+// components
+import Button from "@components/Button/Button.astro";
+
+interface pricingItem {
+  description: string; // plan description
+  price: {
+    monthly: number; // monthly price
+  };
+  features: string[]; // list of features
+}
+
+const pricingData: pricingItem = {
+  description: "One low monthly price",
+  price: {
+    monthly: 14.99,
+  },
+  features: [
+    "All current features",
+    "All future updates",
+    "Advanced analytics",
+    "1 user",
+    "Private forum access",
+    "Discord channel access",
+  ],
+};
+---
+
+<section id="pricing" class="my-24 overflow-hidden md:my-36">
+  <div class="container">
+    <!-- Section title -->
+    <div class="mx-auto max-w-lg text-center">
+      <div class="flex justify-center">
+        <p class="colored-title inline">Pricing</p>
+      </div>
+      <h2 class="h2 mt-8">Simple pricing for everyone</h2>
+    </div>
+
+    <!-- Center card -->
+    <div class="mt-16 grid md:grid-cols-5 md:p-2">
+      <!-- Pricing features -->
+      <div class="py-6 pr-8 md:col-span-3 md:pl-6">
+        <h2 class="h2">One price, all features</h2>
+        <p class="mt-4 opacity-90 dark:opacity-80">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Exercitationem tempora tempore non dolore accusamus odio!
+        </p>
+
+        <!-- <hr class="mt-8 border-base-300 dark:border-base-600/60" /> -->
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+          {
+            pricingData.features.map((feature) => (
+              <li class="flex items-center">
+                <Icon
+                  name="tabler:check"
+                  class="h-5 w-5 text-primary-600 dark:text-primary-400"
+                  aria-hidden="true"
+                />
+                <span class="ml-2 inline">{feature}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <!-- Pricing card -->
+      <div
+        class="relative mx-auto h-full w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-400 to-base-300 to-40% md:col-span-2 dark:from-primary-500 dark:to-base-600/60"
+      >
+        <div class="relative h-full p-px">
+          <div
+            class="relative z-10 flex h-full flex-col overflow-hidden rounded-[calc(1rem-1px)] bg-primary-100 dark:bg-base-800"
+          >
+            <!-- inside card glow -->
+            <div
+              class="absolute left-0 top-0 -z-10 mx-auto aspect-square w-full max-w-7xl -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-300/40 blur-3xl dark:bg-primary-600/20"
+              aria-hidden="true"
+            >
+            </div>
+
+            <!-- card content -->
+            <div
+              class="mx-auto flex h-full w-full max-w-xs flex-col justify-center px-6 py-10 text-center"
+            >
+              <h3 class="text-lg">
+                {pricingData.description}
+              </h3>
+
+              <p class="mt-6 flex flex-wrap items-end justify-center">
+                <span
+                  class="text-5xl font-semibold text-primary-600 dark:text-primary-400"
+                >
+                  ${pricingData.price.monthly}
+                </span>
+                <span class="text-3xl">/mo</span>
+              </p>
+              <div class="mt-12">
+                <Button variant="primary" href="/signup/">Get Started</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
