@@ -6,7 +6,7 @@ import mdx from "@astrojs/mdx";
 import AutoImport from "astro-auto-import";
 import react from "@astrojs/react";
 import keystatic from "@keystatic/astro";
-import vercel from "@astrojs/vercel";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
