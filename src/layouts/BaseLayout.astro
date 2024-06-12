@@ -34,6 +34,12 @@ const {
   postFrontmatter,
   noindex = false,
 } = Astro.props as Props;
+
+// todo: This doesn't need to be here, I just don't know how to print the `id` into HTML source.
+//       ...could use `<script is:inline define:vars={{gtmId}}>`
+//       Not sure it's good in a JS variable occupying the memory/stack and risking override.
+//       as opposed to just printed to HTML.
+const gtmIframeSrc = "https://www.googletagmanager.com/ns.html?id=" + siteData.analytics.gtm.id;
 ---
 
 <!doctype html>
@@ -58,13 +64,26 @@ const {
   >
     <!-- put cookie consent first so it is seen first by screen readers -->
     <!-- <CookieConsent /> -->
+
+    <!-- Google Tag Manager (noscript) (part2, see part1 in `BaseHead.astro`) -->
+    <noscript>
+      <iframe src={gtmIframeSrc}>
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- MAIN -->
     <div class="">
       <Nav />
       <main class="">
         <slot />
       </main>
     </div>
+    <!-- /MAIN end -->
+
+    <!-- FOOTER -->
     <Footer />
+    <!-- /FOOTER end -->
 
     <!-- Scroll animations -->
     <script>

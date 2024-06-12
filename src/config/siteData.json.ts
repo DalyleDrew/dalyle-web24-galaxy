@@ -13,6 +13,16 @@ export interface SiteDataProps {
     src: string;
     alt: string;
   };
+  // EXTRAS
+  analytics?: {
+    ga?: {
+      measurementId: string; // @example `G-12ABC3DE45`
+    }
+    gtm?: {
+      id: string; // @example `GTM-1AB2CDEFG`
+    }
+  }
+
 }
 
 // Update this file with your site specific information
@@ -37,6 +47,17 @@ const siteData: SiteDataProps = {
     src: "/images/cosmic-themes-logo.jpg",
     alt: "Cosmic Themes logo",
   },
+
+  // Google Analytics (GA) & Google Tag Manager (GTM)
+  analytics: {
+    ga: {
+      measurementId: "G-48XHG9PY02"
+    },
+    gtm: {
+      id: "GTM-5M6DTVZT"
+    }
+  }
+
 };
 
 export default siteData;

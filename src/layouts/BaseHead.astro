@@ -1,4 +1,9 @@
 ---
+/**
+ * My parent is the `<head>` element from `BaseLayout.astro`.
+ * There is/was/should be nothing else in there except me.
+ */
+
 import { type CollectionEntry } from "astro:content";
 import { ViewTransitions } from "astro:transitions";
 
@@ -27,10 +32,27 @@ const {
   postFrontmatter,
   noindex = false,
 } = Astro.props as Props;
+
+// todo: Make this optional.
+const gtmId = siteData.analytics?.gtm?.id || false;
+
 ---
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+
+<!-- Google Tag Manager (part1, see `<body>` for part2) -->
+<!-- Weird Astro Conditional HTML Syntax from https://docs.astro.build/en/basics/astro-syntax/#dynamic-html -->
+{gtmId &&
+  <script is:inline define:vars={{gtmId}}>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer',gtmId);
+  </script>
+}
+<!-- End Google Tag Manager -->
 
 <!-- Inter Font: https://rsms.me/inter/ -->
 <link rel="preconnect" href="https://rsms.me/" />
