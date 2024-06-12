@@ -26,9 +26,9 @@ export default config({
   // cloud deployment is free to sign up (up to 3 users per team)
   // docs: https://keystatic.com/docs/cloud
   // create a Keystatic Cloud account here: https://keystatic.cloud/
-  cloud: { project: "cosmic-themes/galaxy" },
+  cloud: { project: "dalyle/dalyle24" },
   ui: {
-    brand: { name: "Cosmic Themes" },
+    brand: { name: "Dalyle.ca" },
   },
   collections: {
     /**
