@@ -3,6 +3,7 @@
         "content",
         "theme",
         "DevEx",
-        "vercel"
+        "vercel",
+        "blog"
     ]
 }

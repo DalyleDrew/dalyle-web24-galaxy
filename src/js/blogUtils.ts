@@ -25,6 +25,27 @@ export async function getAllPosts(): Promise<CollectionEntry<"blog">[]> {
   return formattedPosts;
 }
 
+/**
+ * returns blog posts for /blog/ listing
+ * - filtered for drafts and unlisted, sorted by date, and future posts removed
+ * use like `const posts = await getAllPosts();`
+ */
+export async function getPostsListingPublic(): Promise<CollectionEntry<"blog">[]> {
+  const posts = await getCollection("blog", ({ data }) => {
+    // filter out draft and unlisted posts
+    return data.draft !== true && (!('listed' in data) || data.listed === true);
+  });
+
+  // filter out future posts and sort by date
+  const formattedPosts: CollectionEntry<"blog">[] = formatPosts(posts, {
+    filterOutFuturePosts: true,
+    sortByDate: true,
+    limit: undefined,
+  });
+
+  return formattedPosts;
+}
+
 // --------------------------------------------------------
 /**
  * * returns all blog posts in a formatted array
