@@ -10,6 +10,7 @@
         "dracula-theme.theme-dracula",
         "yoavbls.pretty-ts-errors",
         "astro-build.astro-vscode",
-        "vsls-contrib.codetour"
+        "vsls-contrib.codetour",
+        "tamasfe.even-better-toml",
     ]
 }
